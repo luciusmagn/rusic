@@ -1,0 +1,63 @@
+[[package]]
+name = "async_command"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "rusting 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "libc"
+version = "0.2.33"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "redox_syscall"
+version = "0.1.31"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "redox_termios"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "redox_syscall 0.1.31 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "rusic"
+version = "0.0.2"
+dependencies = [
+ "async_command 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rusting 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "termion 1.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "rusting"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "rusting"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "termion"
+version = "1.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "libc 0.2.33 (registry+https://github.com/rust-lang/crates.io-index)",
+ "redox_syscall 0.1.31 (registry+https://github.com/rust-lang/crates.io-index)",
+ "redox_termios 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[metadata]
+"checksum async_command 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "5afae929cfe2881793334cecb9aec12486c8f621740ead5335945131447c6371"
+"checksum libc 0.2.33 (registry+https://github.com/rust-lang/crates.io-index)" = "5ba3df4dcb460b9dfbd070d41c94c19209620c191b0340b929ce748a2bcd42d2"
+"checksum redox_syscall 0.1.31 (registry+https://github.com/rust-lang/crates.io-index)" = "8dde11f18c108289bef24469638a04dce49da56084f2d50618b226e47eb04509"
+"checksum redox_termios 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "7e891cfe48e9100a70a3b6eb652fef28920c117d366339687bd5576160db0f76"
+"checksum rusting 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "3f1d00fc016646bcab718bd1a60f56083ea3f656cea40b35855e069c033709c7"
+"checksum rusting 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "e168ef1147b23c5cf052a4ee13b91d213b84368e09c08586f6011a17a28da736"
+"checksum termion 1.5.1 (registry+https://github.com/rust-lang/crates.io-index)" = "689a3bdfaab439fd92bc87df5c4c78417d3cbe537487274e9b0b2dce76e92096"

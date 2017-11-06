@@ -1,0 +1,11 @@
+[package]
+name = "rusic"
+description = "A sic IRC wrapper. You need your own version of sic. Mine modified is at https://github.com/luciusmagn/sic"
+license = "Fair"
+version = "0.0.2"
+authors = ["Lukáš Hozda <luk.hozda@gmail.com>"]
+
+[dependencies]
+termion = "*"
+rusting = "0.2.0"
+async_command = "0.2.0"
