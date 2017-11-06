@@ -28,8 +28,8 @@ fn main() {
 	let mut history = Vec::new();
 	let (mut buffer, mut temp_buffer, mut sic_buffer) = (String::new(), String::new(), String::new());
 	let (mut cursor_pos, mut history_pos) = (0, 0);
-
 	let mut sic = async_command::AsyncCommand::new(&mut ::std::process::Command::new("sic").arg("-n").arg("magnusi"));
+
 	sic.run();
 
 	out!("{}{}{}", clear::All, cursor::Goto(1, 1), cursor::Hide);
@@ -70,13 +70,11 @@ fn main() {
 						cursor_pos = buffer.len();
 					} else if history_pos == history.len() -1 && history.len() != 1 {
 						temp_buffer = buffer.clone();
-						buffer.clear();
 						buffer = (&history[history_pos]).to_string();
 						history_pos -= 1;
 						cursor_pos = buffer.len();
 					},
 				Key::Down => {
-					buffer.clear();
 					if history_pos == history.len() -1 { buffer = temp_buffer.clone(); }
 					else { history_pos += 1; buffer = history[history_pos].clone(); }
 					cursor_pos = buffer.len();
@@ -84,15 +82,17 @@ fn main() {
 				_  => (),
 			}
 		}
+
 		for line in sic.packets() {
-			sic_buffer.push_str(&line);
-			sic_buffer.push_str("\n\r");
+			sic_buffer.push_str(&(line + "\n\r"));
 		}
+
 		out!("{}{}\n\n", cursor::Goto(1, 1), &sic_buffer);
 		out!("{}{}{}{}rusic 0.1{}\n\r", cursor::Goto(1, line-2), style::Bold, style::Invert, termion::color::Fg(termion::color::LightYellow), style::Reset);
 		out!("{}{}", cursor::Goto(1, line-1), (0..col).fold::<String, _>(String::new(), |mut a, _| { a.push('_'); a}));
 		out!("{}{}", cursor::Goto(1, line), &buffer);
 		out!("{}{}", cursor::Show, cursor::Goto((cursor_pos as u16 + 1) % col, line));
+
 		::std::thread::sleep(::std::time::Duration::from_millis(33));
 	}
 	out!("{}", cursor::Show);
