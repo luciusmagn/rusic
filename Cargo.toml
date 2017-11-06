@@ -6,6 +6,6 @@ version = "0.0.2"
 authors = ["Lukáš Hozda <luk.hozda@gmail.com>"]
 
 [dependencies]
-termion = "*"
+termion = "1.5.1"
 rusting = "0.2.0"
 async_command = "0.2.0"
