@@ -2,7 +2,7 @@
 name = "rusic"
 description = "A sic IRC wrapper. You need your own version of sic. Mine modified is at https://github.com/luciusmagn/sic"
 license = "Fair"
-version = "0.0.4"
+version = "0.0.5"
 authors = ["Lukáš Hozda <luk.hozda@gmail.com>"]
 
 [dependencies]
